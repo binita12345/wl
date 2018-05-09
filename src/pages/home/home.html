@@ -1,0 +1,89 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content has-header="true" class="bgImage">
+	<!-- <div class="vertical-align-content">
+		<div class="divcenter">
+			<h1>Please fill the fields</h1>
+		</div>
+	</div> -->
+	<ion-grid class="vertical-align-content">
+		<ion-row>
+			<ion-col col-12 col-xl-12>
+				<ion-grid class="divcenter">
+					<ion-row>
+						<ion-col col-12 col-xl-12>
+							<h1>Login to Your Acco...</h1>
+							<ion-input placeholder="Username"></ion-input>
+							<ion-input placeholder="Password"></ion-input>
+							<button ion-button full style="text-transform: none;" (click)="signin()">SignIn</button>
+						</ion-col>
+				  </ion-row>
+			  </ion-grid>
+			</ion-col>
+	  </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+		<ion-row>
+			<ion-col col-9 col-xl-9>
+				<!-- <div *ngIf="isSignup; else signup">
+					
+				</div> -->
+				<!-- <ng-template #signup> -->
+					<h4 class="headcss">*Must fill all fields to...</h4>
+			</ion-col>
+			<ion-col col-3 col-xl-3 style="display: flex !important;justify-content: center !important;align-items: center !important;">
+			    <button (click)="signupUser()" class="btncss" *ngIf="signup">
+			      SignUp
+			    </button>
+			  <!-- </ng-template> -->
+			</ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12 col-xl-12>
+			  <div *ngIf="isfbLoggedIn; else facebookLogin">
+			    <h2>Hi, {{users.name}} ({{users.email}})</h2>
+			    <p>
+			      Gender: {{users.gender}}
+			    </p>
+			    <p>
+			      <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+			    </p>
+			    <p>
+			      <button ion-button icon-right (click)="fblogout()">
+			        Logout
+			      </button>
+			    </p>
+			  </div>
+			  <ng-template #facebookLogin>
+			    <button class="loginBtn loginBtn--facebook" (click)="fblogin()">
+			      Login with
+			    </button>
+			  </ng-template>
+			</ion-col>
+			<ion-col col-12 col-xl-12>
+			  <div *ngIf="isGooleLoggedIn; else loginTemplate">
+			    <h1>Welcome, {{displayName}}!</h1>
+			    <p>Email: {{email}}<br>
+			      Family Name: {{familyName}}<br>
+			      Given Name: {{givenName}}<br>
+			      User ID: {{userId}}</p>
+			    <p><ion-avatar item-left>
+			        <img src="{{imageUrl}}">
+			       </ion-avatar></p>
+			    <p><button ion-button (click)="googlelogout()">Logout From Google</button></p>
+			  </div>
+			  <ng-template #loginTemplate>
+			    <button class="loginBtn loginBtn--google" (click)="googlelogin()">Login With Google</button>
+			  </ng-template>
+		  </ion-col>
+	  </ion-row>
+  </ion-grid>
+</ion-content>
